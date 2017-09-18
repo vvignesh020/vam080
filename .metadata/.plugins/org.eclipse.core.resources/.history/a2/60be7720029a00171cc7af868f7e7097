@@ -1,0 +1,11 @@
+package in.vamsoft.vehicle;
+
+public abstract class Vehicle {
+
+	public Vehicle() {
+		System.out.println("Vehicles.Vehicles()");
+		
+	}
+	
+
+}
