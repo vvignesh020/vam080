@@ -1,8 +1,8 @@
 package in.vamsoft.watch;
 
-public abstract class Clock implements Ticking{
+public abstract class Clock implements Ticking {
 
-	public Clock () {
-		
-	}
+  public Clock() {
+
+  }
 }

@@ -1,9 +1,9 @@
 package in.vamsoft.vehicle;
 
 public interface Driving {
-	void start();
+  void start();
 
-	void stop();
+  void stop();
 
-	void brake();
+  void brake();
 }

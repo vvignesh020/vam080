@@ -1,5 +1,5 @@
 package in.vamsoft.bird;
 
-public abstract class Animal implements Talking  {
+public abstract class Animal implements Talking {
 
 }

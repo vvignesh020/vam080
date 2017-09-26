@@ -1,5 +1,0 @@
-package in.vamsoft.vehicle;
-
-public class car extends Vehicle {
-
-}

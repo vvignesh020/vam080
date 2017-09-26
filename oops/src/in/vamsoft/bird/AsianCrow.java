@@ -1,5 +1,5 @@
 package in.vamsoft.bird;
 
-public abstract class AsianCrow extends Crow{
+public abstract class AsianCrow extends Crow {
 
 }

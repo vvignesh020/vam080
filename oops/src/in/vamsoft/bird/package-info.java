@@ -1,6 +1,6 @@
 /**
- * This class contain package 
- * Pakage introduce 
+ * This class contain package Pakage introduce
+ *
  * @author vamsoft
  * @since 19/09/2017
  *
