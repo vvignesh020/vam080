@@ -6,11 +6,17 @@
               as the first entry and export the buildfile again. --><project basedir="." default="build" name="oops">
     <property environment="env"/>
     <property name="ECLIPSE_HOME" value="../../../eclipse/"/>
+    <property name="junit.output.dir" value="junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.8"/>
     <property name="source" value="1.8"/>
+    <path id="JUnit 4.libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+    </path>
     <path id="oops.classpath">
         <pathelement location="bin"/>
+        <path refid="JUnit 4.libraryclasspath"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -57,6 +63,39 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
+    <target name="MathTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="in.vamsoft.general.test.MathTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="oops.classpath"/>
+        </junit>
+    </target>
+    <target name="EnmTest">
+        <java classname="in.vamsoft.test.EnmTest" failonerror="true" fork="yes">
+            <classpath refid="oops.classpath"/>
+        </java>
+    </target>
+    <target name="Mathtest1">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="in.vamsoft.general.test.Mathtest1" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="oops.classpath"/>
+        </junit>
+    </target>
+    <target name="StringConcatination">
+        <java classname="in.vamsoft.kathysierra.unit4.StringConcatination" failonerror="true" fork="yes">
+            <classpath refid="oops.classpath"/>
+        </java>
+    </target>
+    <target name="MonthsPrint">
+        <java classname="in.vamsoft.training.enum1.MonthsPrint" failonerror="true" fork="yes">
+            <classpath refid="oops.classpath"/>
+        </java>
+    </target>
     <target name="Test">
         <java classname="in.vamsoft.test.Test" failonerror="true" fork="yes">
             <classpath refid="oops.classpath"/>
@@ -66,5 +105,18 @@
         <java classname="in.vamsoft.vehicle.Jet" failonerror="true" fork="yes">
             <classpath refid="oops.classpath"/>
         </java>
+    </target>
+    <target name="Operators">
+        <java classname="in.vamsoft.kathysierra.unit4.Operators" failonerror="true" fork="yes">
+            <classpath refid="oops.classpath"/>
+        </java>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
     </target>
 </project>

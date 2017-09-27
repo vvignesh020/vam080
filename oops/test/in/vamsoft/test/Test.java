@@ -1,19 +1,16 @@
-/**
- *
- */
 package in.vamsoft.test;
 
 import in.vamsoft.vehicle.Car;
 import in.vamsoft.vehicle.SportsCar;
 
-/**
+/**.
  * @author vamsoft
  *
  */
 public class Test {
 
   /**
-   * @param args
+   * @param args passes argument.
    */
 
   public static void main(String[] args) {

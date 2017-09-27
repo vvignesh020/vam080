@@ -1,5 +1,6 @@
 package in.vamsoft.general.test;
 
+import in.vamsoft.training.general.Math;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -7,7 +8,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import in.vamsoft.training.general.Math;
 
 public class MathTest {
   private Math math = null;
